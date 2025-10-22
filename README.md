@@ -12,7 +12,10 @@ OAuth authorization code flow + minimal send + webhook skeleton in plain PHP. Fu
 PHP 8+, cURL, PSR-4 autoload (Composer)
 
 ## Quick Start
-```bash
 cp .env.example .env
 composer install
 php -S localhost:8080 -t public
+
+Visit http://localhost:8080/authorize.php to start OAuth.
+Use the access token to call:
+http://localhost:8080/send.php?access_token=YOUR_TOKEN&email=test@example.com
