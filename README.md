@@ -1,21 +1,39 @@
 # DocuSign Integration (PHP)
 
-OAuth authorization code flow + minimal send + webhook skeleton in plain PHP. Fully env-driven, no frameworks.
+Simple, framework-free DocuSign OAuth2 integration and digital document sending system.  
+Implements a clean authorization flow, minimal envelope sending, and webhook listener in pure PHP.
 
-## Features
-- OAuth Authorization Code flow (redirect → callback → token exchange)
-- Minimal envelope send example
-- Clean separation (`src/` + `public/`) and small helpers (Env, Http)
-- Safe to extend in enterprise contexts
+---
 
-## Tech
-PHP 8+, cURL, PSR-4 autoload (Composer)
+## 🚀 Overview
+This project demonstrates a **production-safe, minimal DocuSign implementation** used in enterprise environments.  
+It integrates **OAuth2 Authorization Code Flow**, supports **automatic token refresh**, and enables **envelope sending and webhook processing**.
 
-## Quick Start
-cp .env.example .env
+**Core Concepts**
+- 🔐 Secure OAuth2 Authorization Flow  
+- 📤 Minimal envelope send via REST API  
+- 🔄 Webhook listener for status updates  
+- ⚙️ Environment-driven config (`.env`)  
+- 🧩 Clear structure (`src/` + `public/`) for enterprise extensibility  
+
+---
+
+## 🧠 Tech Stack
+| Layer | Technology |
+|:--|:--|
+| Language | PHP 8+ |
+| HTTP | cURL |
+| Autoload | PSR-4 (Composer) |
+| Config | `.env` variables (dotenv) |
+| Platform | DocuSign REST API (OAuth2 + Envelopes + Webhooks) |
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+git clone https://github.com/BRadivojevic/docusign-integration-php.git
+cd docusign-integration-php
 composer install
+cp .env.example .env
 php -S localhost:8080 -t public
-
-Visit http://localhost:8080/authorize.php to start OAuth.
-Use the access token to call:
-http://localhost:8080/send.php?access_token=YOUR_TOKEN&email=test@example.com
