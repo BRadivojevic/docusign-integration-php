@@ -1,9 +1,0 @@
-{
-	"name": "yourgithub/docusign-integration-php",
-	"description": "DocuSign OAuth + send + webhook (PHP, env-driven)",
-	"type": "project",
-	"require": {
-		"php": ">=8.0"
-	},
-	"autoload": { "psr-4": { "App\\": "src/" } }
-}
